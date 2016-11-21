@@ -1,0 +1,40 @@
+body{
+    background-color: #34495e;
+    /*background-color: #2ecc71;*/
+    /*min-height: 2000px;*/
+}
+/*.nav{
+    margin: 70!important;
+}*/
+
+.navbar{
+    /*background-color: #9b59b6;*/
+    /*background-color: #ecf0f1;*/
+    background-color: #ffffff;
+}
+
+.post-list{
+    /*background-color: #ecf0f1;*/
+    /*background-color: #ffffff;*/
+}
+
+.jumbotron{
+    background-color: #ffffff;
+    /*background-color: #ecf0f1;*/
+}
+.post-description{
+
+}
+.small{
+    color: #9b59b6;
+}
+
+.excerpt{
+    font-size: x-small;
+    color: #34495e;
+}
+
+.img-fluid{
+    max-width: 100%;
+    height: auto;
+}

@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  {{ content }}
+
+  <ul class="post-list">
+    <br>
+    {% for post in site.posts %}
+      <div class="post-list-item">
+        <a href="{{ post.url | relative_url }}">
+          <div class="row">
+            <div class="col-md-4 post-list-item-image">
+              <br><img src="{{ post.banner | relative_url }}"  class="img-fluid" href="{{ post.url | relative_url }}"></img>
+            </div>
+            <div class="col-md-8 post-list-item-description">
+              <h6>{{ post.title | escape }}
+                 <div class="excerpt">
+                     {{ post.excerpt }}
+                 </div>
+                 <div class="small">
+                     {{ site.data.authors[post.author].name }} &#9679; {{ post.date | date: "%b %-d, %Y" }}
+                 </div>
+             </h6>
+            </div>
+          </div>
+      </a>
+      <br>
+    {% endfor %}
+    <br>
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+
+</div>

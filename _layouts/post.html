@@ -1,0 +1,56 @@
+---
+layout: default
+---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h2 class="post-title" itemprop="name headline">{{ page.title | escape }}</h2>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
+        {% if page.author %} •
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span>
+            <!-- Look the author details up from the site config. -->
+{% assign author = site.data.authors[page.author] %}
+
+<!-- Output author details if some exist. -->
+{% if author %}
+    <span>
+            <!-- Personal Info. -->
+                    Written by <a href="{{ author.web }}" target="_blank">{{ author.name }}</a>
+                        </span>
+{% endif %}
+<hr>
+            </span>
+          </span>{% endif %}
+        </p>
+  </header>
+  <div class="row">
+    <div class = "col-md-8">
+      <div class="post-content" itemprop="articleBody">
+        {{ content }}
+      </div>
+    </div>
+    <!-- <div class="col-md-1"></div> -->
+    <div class="col-md-4">
+        <h5><small>More from Civil Dissident</small></h5>
+        {% for post in site.posts %}
+          <a href="{{ post.url | relative_url }}">
+            <div class="row">
+              <div class="col-md-5 post-list-item-image">
+                <br><img src="{{ post.banner | relative_url }}"  class="img-fluid" href="{{ post.url | relative_url }}"></img>
+              </div>
+              <div class="col-md-7 post-list-item-description">
+                {{ post.title | escape }}
+              </div>
+            </div>
+          </a>
+          <br>
+        {% endfor %}
+    </div>
+  </div>
+
+  {% if site.disqus.shortname %}
+    {% include disqus_comments.html %}
+  {% endif %}
+</article>

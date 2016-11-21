@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <div class="container page-content" aria-label="Content">
+      <!-- Main component for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            {{ content }}
+        </div>
+
+    </div> <!-- /container -->
+
+    {% include footer.html %}
+
+  </body>
+
+</html>

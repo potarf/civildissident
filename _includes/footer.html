@@ -1,0 +1,37 @@
+<footer class="site-footer">
+
+  <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-4">
+        <h2 class="footer-heading">{{ site.title | escape }}</h2>
+      </div>
+      <div class="col-md-2">
+        <br>
+        <ul class="social-media-list">
+          {% if site.github_username %}
+          <li>
+            {% include icon-github.html username=site.github_username %}
+          </li>
+          {% endif %}
+
+          {% if site.twitter_username %}
+          <li>
+               {% include icon-twitter.html username=site.twitter_username %}
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <br>
+        <p>{{ site.description | escape }}</p>
+      </div>
+      <div class="col-md-1"></div>
+  </div>
+
+</footer>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{{ "assets/dist/js/vendor/jquery.min.js" | relative_url }}"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{{ "assets/dist/js/flat-ui.min.js" | relative_url }}"></script>
